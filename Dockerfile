@@ -57,12 +57,10 @@ ENV NODE_OPTIONS='--max-http-header-size=100000'
 # Install dependencies for all workspaces
 RUN yarn install
 
-# Navigate to noodle workspace, install dependencies, and build
-RUN yarn --cwd /usr/src/app/noodle install
+# Build noodle workspace using craco
 RUN yarn --cwd /usr/src/app/noodle build
 
-# Navigate to unicorn workspace, install dependencies, and build
-RUN yarn --cwd /usr/src/app/unicorn install
+# Build unicorn workspace (if it’s a Next.js project or other setup as previously discussed)
 RUN yarn --cwd /usr/src/app/unicorn build
 
 # Make Railway-provided port accessible
