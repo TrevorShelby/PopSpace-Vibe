@@ -54,9 +54,12 @@ RUN rm ./file-upload/.env || true
 ENV NODE_ENV production
 ENV NODE_OPTIONS='--max-http-header-size=100000'
 
+# Install dependencies and set up workspaces
+RUN yarn install
+
 # Run the builds for noodle and unicorn
-RUN yarn workspace @withso/noodle build
-RUN cd unicorn && yarn build
+RUN yarn workspace noodle build
+RUN yarn workspace unicorn build
 
 # Make Railway-provided port accessible
 ENV PORT=${PORT}
