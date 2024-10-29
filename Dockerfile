@@ -57,11 +57,11 @@ ENV NODE_OPTIONS='--max-http-header-size=100000'
 # Install dependencies for all workspaces
 RUN yarn install
 
-# Build noodle workspace
-RUN cd noodle && yarn install && yarn build
+# Build noodle workspace using an absolute path
+RUN yarn --cwd ./noodle install && yarn --cwd ./noodle build
 
-# Build unicorn workspace
-RUN cd unicorn && yarn install && yarn build
+# Build unicorn workspace using an absolute path
+RUN yarn --cwd ./unicorn install && yarn --cwd ./unicorn build
 
 # Make Railway-provided port accessible
 ENV PORT=${PORT}
