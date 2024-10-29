@@ -12,7 +12,6 @@ COPY noodle-shared/package.json ./noodle-shared/package.json
 COPY unicorn/package.json ./unicorn/package.json
 COPY unicorn/component/package.json ./unicorn/component/package.json
 COPY file-upload/package.json ./file-upload/package.json
-COPY .git ./.git
 
 # Set environment variables
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
