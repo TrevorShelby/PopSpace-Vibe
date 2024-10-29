@@ -26,7 +26,7 @@
   },
   "scripts": {
     "build": "next build",
-    "start": "pm2 start index.js --name unicorn --wait-ready --kill-timeout 3000",
+    "start": "next start -p $PORT",
     "dev": "node-dev index.js -r dotenv/config",
     "stop": "pm2 stop unicorn",
     "reload": "pm2 reload unicorn",
