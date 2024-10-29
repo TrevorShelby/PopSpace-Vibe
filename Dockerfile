@@ -54,7 +54,8 @@ RUN rm ./file-upload/.env || true
 ENV NODE_ENV production
 ENV NODE_OPTIONS='--max-http-header-size=100000'
 
-# Run the Next.js build directly in unicorn directory
+# Run the builds for noodle and unicorn
+RUN yarn workspace @withso/noodle build
 RUN cd unicorn && yarn build
 
 # Make Railway-provided port accessible
