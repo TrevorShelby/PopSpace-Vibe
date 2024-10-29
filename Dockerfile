@@ -55,7 +55,7 @@ ENV NODE_ENV production
 ENV NODE_OPTIONS='--max-http-header-size=100000'
 
 # Run the Next.js build for unicorn service (ensure dependencies are installed first)
-RUN yarn workspace @withso/unicorn build:next
+RUN yarn workspace @withso/unicorn build
 
 # Make Railway-provided port accessible
 ENV PORT=${PORT}
